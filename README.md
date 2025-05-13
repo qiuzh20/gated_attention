@@ -1,6 +1,6 @@
 # Gated Attention: Implementation and Visualization
 
-This repository contains the implementation of **gated attention** mechanisms based on [Qwen3](https://github.com/QwenLM/Qwen3) model architecture, along with tools for visualizing attention maps. Our modifications are based on findings from recent research that demonstrate how applying **sparse, head-specific gating after Scaled Dot-Product Attention (SDPA)** can significantly improve performance, training stability, and long-context generalization.
+This repository contains the implementation of **gated attention** mechanisms based on [Qwen3](https://github.com/QwenLM/Qwen3) model architecture, along with tools for visualizing attention maps. Our modifications are based on findings from recent research that demonstrate how applying **sparse, head-specific gating after Scaled Dot-Product Attention (SDPA)** can significantly improve performance, training stability, and long-context generalization. More details are in our paper [Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free](https://arxiv.org/abs/2505.06708).
 
 ## 📚 Introduction
 
@@ -17,13 +17,13 @@ We introduce a **query-dependent sparse gate** after the SDPA output (`G1`), whi
 
 ## 📦 Models
 
-We provide variants of the Qwen3 model with different gating configurations:
+We provide models follow Qwen3's architecture with different gating configurations:
 
 - `baseline`: Standard attention without any gating.
 - `gate_headwise`: Headwise gating applied after SDPA.
 - `gate_elementwise`: Elementwise gating applied after SDPA.
 
-All models are compatible with HuggingFace Transformers APIs.
+These models are available at [huggingface repo](https://huggingface.co/QwQZh/gated_attention).
 
 ---
 
@@ -130,17 +130,21 @@ These options can be configured in the model config under:
 ---
 
 
-<!-- ## 📝 Citation
+## 📝 Citation
 
 If you use this code or models in your research, please cite our paper:
 
 ```bibtex
-@inproceedings{lin2025forgetting,
-  title={Sparse Gating Mitigates Attention Sink and Enhances Long-Context Modeling},
-  author={Lin, Yaxin and Xiao, Tianhe and Csordás, Róbert and Gu, Aohan and Zhang, Peng and Yang, Jian and Hua, Xinyi and Sun, Yu and Lin, Zhongkai and Liu, Hang and Tang, Yiyuan and Zhou, Minghai and Wang, Hongxia and Li, Junnan and Yuan, Zilong and Zhang, Yiren and Darcet, Théo and Chen, Bo and Cao, Qingqing and Lu, Haibo and Wang, Yizheng and Zhang, Kai and Zhang, Han and Wang, Shuming and Wu, Weiwei and Huang, Weikang and He, Yanyan and Xu, Jialin and Li, Xiaoyu and Zhao, Yue and Chen, Zhiyuan and Zhang, Yujie and Zhang, Xuefeng and Chen, Jing and Wang, Yanan and Wang, Jiaqi and Liu, Yuxiao and Liu, Chao and Liu, Yifan and Li, Meng and Zhu, Yunpeng and Jiang, Yufei and Li, Cheng and Zhang, Yuhao and Wang, Shuo and Zhang, Peng and Ma, Yuting and Wang, Xiaolong and Li, Yaxin and Zhang, Yaxin and Zhang, Peng and Zhang, Yiren and Zhang, Yujie and Zhang, Xuefeng and Zhang, Kai and Zhang, Han and Zhang, Yiren and Zhang, Yujie and Zhang, Xuefeng and Zhang, Kai and Zhang, Han},
-  year={2025}
+@misc{qiu2025gatedattentionlargelanguage,
+      title={Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free}, 
+      author={Zihan Qiu and Zekun Wang and Bo Zheng and Zeyu Huang and Kaiyue Wen and Songlin Yang and Rui Men and Le Yu and Fei Huang and Suozhi Huang and Dayiheng Liu and Jingren Zhou and Junyang Lin},
+      year={2025},
+      eprint={2505.06708},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.06708}, 
 }
-``` -->
+```
 
 ## 📬 Contact
 
