@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Set device
-base_dir = '/cpfs01/data/shared/Group-m6/qiuzihan.qzh/important_hf'
+base_dir = './' # change to your hf model directory
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Loop through different model variants
